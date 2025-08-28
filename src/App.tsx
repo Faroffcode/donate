@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Heart, Users, Home, Utensils, Plus } from 'lucide-react';
+import AboutUs from './components/AboutUs';
 
 interface DonorInfo {
   name: string;
@@ -9,6 +10,7 @@ interface DonorInfo {
 }
 
 function App() {
+  const [currentPage, setCurrentPage] = useState<'home' | 'about'>('home');
   const [donorInfo, setDonorInfo] = useState<DonorInfo>({
     name: '',
     email: '',
@@ -24,6 +26,10 @@ function App() {
     window.open('https://razorpay.me/@Voiceofpeace', '_blank');
   };
 
+  if (currentPage === 'about') {
+    return <AboutUs onBack={() => setCurrentPage('home')} />;
+  }
+
   const stats = [
     { icon: Users, label: 'People Helped', value: '50,000+' },
     { icon: Home, label: 'Families Supported', value: '8,500+' },
@@ -36,7 +42,13 @@ function App() {
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-green-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={() => setCurrentPage('about')}
+              className="text-green-700 hover:text-green-800 font-medium transition-colors"
+            >
+              About Us
+            </button>
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center">
                 <Heart className="w-5 h-5 text-white" />
@@ -45,6 +57,7 @@ function App() {
                 Voice For Peace
               </h1>
             </div>
+            <div className="w-20"></div> {/* Spacer for centering */}
           </div>
         </div>
       </header>
