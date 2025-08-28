@@ -42,7 +42,7 @@ function App() {
                 <Heart className="w-5 h-5 text-white" />
               </div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-green-800 to-emerald-700 bg-clip-text text-transparent">
-                Support Palestine
+                Voice For Peace
               </h1>
             </div>
           </div>
@@ -225,6 +225,7 @@ function App() {
           </p>
           <p className="text-sm text-gray-400">
             This is a humanitarian aid initiative • All donations go directly to relief efforts
+            The Doners information are private but availabe in our whatsapp group
           </p>
         </div>
       </footer>
