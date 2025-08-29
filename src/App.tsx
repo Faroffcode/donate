@@ -188,6 +188,15 @@ function App() {
                 <span>Donate Now</span>
               </button>
 
+              {/* Join Now Button */}
+              <button
+                onClick={() => window.open('https://forms.gle/syK3HTr8Lk9y1MwJ6', '_blank')}
+                className="w-full py-4 px-6 rounded-lg font-bold text-lg transition-all duration-200 flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transform hover:scale-[1.02] mt-4"
+              >
+                <Users className="w-5 h-5" />
+                <span>Join Now</span>
+              </button>
+
               <p className="text-center text-sm text-gray-600 mt-4">
                 🔒 Secured by Razorpay • Your donation is safe and secure
               </p>
