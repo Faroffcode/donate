@@ -214,7 +214,7 @@ function AboutUs({ onBack }: AboutUsProps) {
             humane and peaceful world. Together, we can make a difference in the lives of Palestinian families.
           </p>
           <button
-            onClick={https://razorpay.me/@Voiceofpeace}
+            onClick={go back}
             className="bg-white text-green-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-50 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 duration-200"
           >
             Make a Donation
