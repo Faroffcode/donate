@@ -85,7 +85,8 @@ function AboutUs({ onBack }: AboutUsProps) {
             About <span className="text-green-700">Voice For Peace</span>
           </h2>
           <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-            We are a humanitarian initiative dedicated to providing essential aid and support 
+            Voice for Peace is a humanitarian initiative committed to fostering compassion, equity, 
+            and support for those in need. We are dedicated to providing essential aid and support 
             to the people of Palestine, particularly those affected by the ongoing crisis in Gaza.
           </p>
         </div>
@@ -96,20 +97,28 @@ function AboutUs({ onBack }: AboutUsProps) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">About Voice for Peace</h3>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Voice For Peace was born from a deep commitment to human dignity and the belief 
-                that no one should suffer in silence. We work tirelessly to provide immediate 
-                humanitarian relief to Palestinian families affected by conflict and hardship.
+                Voice for Peace is a humanitarian initiative committed to fostering compassion, equity, 
+                and support for those in need. Established and personally managed by Imtiaz Haque, 
+                the platform serves as a transparent and trustworthy channel for individuals who wish 
+                to make a meaningful contribution to society.
               </p>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Our mission extends beyond just providing aid – we aim to amplify the voices 
-                of those who need to be heard, to build bridges of understanding, and to create 
-                a network of compassionate individuals who believe in justice and peace.
+                Our mission is to promote peace and well-being by mobilizing resources to assist 
+                vulnerable communities. Through donations and collective goodwill, we aim to provide 
+                relief, support essential causes, and contribute to the betterment of lives impacted 
+                by hardship.
+              </p>
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                Unlike large institutions, Voice for Peace is driven by the dedication of an individual 
+                who believes that change begins with a single step. Every contribution made through this 
+                platform is carefully directed toward initiatives that embody integrity, accountability, 
+                and lasting impact.
               </p>
               <div className="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-xl border border-green-200">
                 <p className="text-green-800 font-semibold text-lg">
-                  "Every donation is a message of hope, every contribution is a bridge to peace."
+                  "We believe that peace is not merely the absence of conflict, but the presence of compassion, justice, and opportunity."
                 </p>
               </div>
             </div>
@@ -199,10 +208,10 @@ function AboutUs({ onBack }: AboutUsProps) {
       {/* Call to Action */}
       <section className="py-16 bg-gradient-to-r from-green-600 to-emerald-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-3xl font-bold text-white mb-6">Join Our Mission</h3>
+          <h3 className="text-3xl font-bold text-white mb-6">Join Our Movement</h3>
           <p className="text-xl text-green-100 mb-8 leading-relaxed">
-            Together, we can make a difference in the lives of Palestinian families. 
-            Your support helps us continue our vital humanitarian work.
+            By joining hands with us, you become part of a movement dedicated to creating a more 
+            humane and peaceful world. Together, we can make a difference in the lives of Palestinian families.
           </p>
           <button
             onClick={onBack}
