@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
 import { Menu as MenuIcon, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-interface MenuProps {
-  onNavigate: (page: string) => void;
-}
-
-function Menu({ onNavigate }: MenuProps) {
+function Menu() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { label: 'About Us', value: 'about' },
-    { label: 'Contact Us', value: 'contact' },
-    { label: 'Shipping Policy', value: 'shipping' },
-    { label: 'Terms and Conditions', value: 'terms' },
-    { label: 'Cancellations and Refunds', value: 'refunds' },
-    { label: 'Privacy Policy', value: 'privacy' },
+    { label: 'About Us', path: '/about-us' },
+    { label: 'Contact Us', path: '/contact-us' },
+    { label: 'Shipping Policy', path: '/shipping-policy' },
+    { label: 'Terms and Conditions', path: '/terms-and-conditions' },
+    { label: 'Cancellations and Refunds', path: '/cancellations-and-refunds' },
+    { label: 'Privacy Policy', path: '/privacy-policy' },
   ];
 
-  const handleItemClick = (value: string) => {
-    onNavigate(value);
+  const handleItemClick = () => {
     setIsOpen(false);
   };
 
@@ -39,13 +35,14 @@ function Menu({ onNavigate }: MenuProps) {
         <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-green-100 z-50">
           <div className="py-2">
             {menuItems.map((item, index) => (
-              <button
+              <Link
                 key={index}
-                onClick={() => handleItemClick(item.value)}
-                className="w-full text-left px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors border-b border-gray-100 last:border-b-0"
+                to={item.path}
+                onClick={handleItemClick}
+                className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors border-b border-gray-100 last:border-b-0"
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </div>
         </div>
