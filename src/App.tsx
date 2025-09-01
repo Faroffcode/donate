@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Heart, Users, Home, Utensils, Plus } from 'lucide-react';
 import AboutUs from './components/AboutUs';
+import ContactUs from './components/ContactUs';
+import ShippingPolicy from './components/ShippingPolicy';
+import TermsConditions from './components/TermsConditions';
+import CancellationsRefunds from './components/CancellationsRefunds';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import Menu from './components/Menu';
 
 interface DonorInfo {
   name: string;
@@ -9,8 +15,10 @@ interface DonorInfo {
   message: string;
 }
 
+type PageType = 'home' | 'about' | 'contact' | 'shipping' | 'terms' | 'refunds' | 'privacy';
+
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about'>('home');
+  const [currentPage, setCurrentPage] = useState<PageType>('home');
   const [donorInfo, setDonorInfo] = useState<DonorInfo>({
     name: '',
     email: '',
@@ -30,6 +38,26 @@ function App() {
     return <AboutUs onBack={() => setCurrentPage('home')} />;
   }
 
+  if (currentPage === 'contact') {
+    return <ContactUs onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'shipping') {
+    return <ShippingPolicy onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'terms') {
+    return <TermsConditions onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'refunds') {
+    return <CancellationsRefunds onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'privacy') {
+    return <PrivacyPolicy onBack={() => setCurrentPage('home')} />;
+  }
+
   const stats = [
     { icon: Users, label: 'People Helped', value: '50,000+' },
     { icon: Home, label: 'Families Supported', value: '8,500+' },
@@ -43,12 +71,7 @@ function App() {
       <header className="bg-white shadow-sm border-b border-green-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <button
-              onClick={() => setCurrentPage('about')}
-              className="text-green-700 hover:text-green-800 font-medium transition-colors"
-            >
-              About Us
-            </button>
+            <Menu onNavigate={(page) => setCurrentPage(page as PageType)} />
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center">
                 <Heart className="w-5 h-5 text-white" />
@@ -247,7 +270,7 @@ function App() {
           </p>
           <p className="text-sm text-gray-400">
             This is a humanitarian aid initiative • All donations go directly to relief efforts
-            The Doners information are private but availabe in our whatsapp group
+            The Donors information are private but available in our whatsapp group
           </p>
         </div>
       </footer>
